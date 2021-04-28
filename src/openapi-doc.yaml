@@ -1,0 +1,38 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: 'serverless-patterns-include'
+host: 'localhost'
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+
+definitions:
+  ErrorResponse:
+    type: object
+    properties:
+      status:
+        type: boolean
+        description: 'true or false, if operation was successful'
+      code:
+        type: string
+        description: technical error code
+    required:
+      - code
+    additionalProperties: true
+
+responses:
+  NotFound:
+    description: Not found
+    schema:
+      $ref: '#/definitions/ErrorResponse'
+
+  Error:
+    description: Error
+    schema:
+      $ref: '#/definitions/ErrorResponse'
+
+paths:

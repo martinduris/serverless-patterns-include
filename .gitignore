@@ -1,0 +1,5 @@
+serverless-patterns-include.iml
+/node_modules/
+/.serverless/
+/.idea/
+package-lock.json
